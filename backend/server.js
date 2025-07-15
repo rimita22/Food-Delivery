@@ -7,7 +7,7 @@ import 'dotenv/config'
 import cartRouter from "./routes/cartRoute.js"
 import testRoute from "./routes/testRoute.js";
 import orderRouter from "./routes/orderRoute.js"
-
+import cors from "cors";
 
 // app config
 const app = express()
@@ -16,11 +16,12 @@ const port = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json())
-app.use(cors())
-// app.use(cors({
-//   origin: "http://localhost:5173", // or "http://localhost:5174" depending on your setup
-//   credentials: true, // if using cookies or auth headers
-// }));
+//app.use(cors())
+
+app.use(cors({
+    origin: "https://food-delivery-fronteend.vercel.app",
+    credentials: true
+}));
 
 // dB connection
 connectDB();
