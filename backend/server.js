@@ -21,11 +21,7 @@ app.use(cors({
     credentials: true
 }));
 
-// ✅ Handle preflight OPTIONS requests globally
-app.options('*', cors({
-    origin: "https://food-delivery-fronteend.vercel.app",
-    credentials: true
-}));
+
 
 // connect to DB
 connectDB();
