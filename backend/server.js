@@ -17,7 +17,10 @@ app.use(express.json());
 
 // ✅ CORS setup
 app.use(cors({
-    origin: "https://food-delivery-fronteend.vercel.app",
+     origin: [
+        "https://food-delivery-fronteend.vercel.app",
+        "https://food-delivery-admin-bice.vercel.app"
+    ],
     credentials: true
 }));
 
